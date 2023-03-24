@@ -1,0 +1,629 @@
+---
+title: "Distribuciones de muestreo"
+author: "Jairo Enrique Alba Talero"
+date: "05/04/2022"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Distribución muestral de la media.
+
+## Distribución muestral de la media.
+
+Es el conjunto de la medias de todas las muestras de tamaño n que es posible obtener de una población de tamaño N.
+
+
+## Ejemplo
+
+
+Suponga que se tiene una población de 5 familias (N = 5) y la variable que se estudia es el número de hijos de cada familia.
+
+| Familia           | Hijos       | 
+|-------------------|-------------|
+|Pérez              | 2           |         
+| Gómez             | 4           | 
+|Duran              | 6           | 
+| Hidalgo           | 8           | 
+| Ramiréz           | 10          | 
+
+## Media poblacional.
+
+Por lo tanto:
+
++ la media poblacional es:
+
+<center>
+$\mu = \frac{\sum x}{N} = \frac{30}{5} = 6$
+<center>
+
+
+
+
+
+## Desviación estándar poblacional.
+
+| Familia           | Hijos       | $x-\mu$       | $(x-\mu)^{2}$ |
+|-------------------|-------------|---------------|--------------|
+|Pérez              | 2           | (2-6)=-4      | (2-6)^{2} =16|
+| Gómez             | 4           | (4-6)=-2      | (4-6)^{2} = 4|
+|Duran              | 6           | (6-6)= 0      | (6-6)^{2} = 0 |
+| Hidalgo           | 8           | (8-6)=2       | (8-6)^{2}  = 4|
+| Ramiréz           | 10          | (10-6)=4      | (10-6)^{2}  =16|
+
+
++ la desviación estandar es:
+
+<center>
+$\sigma = \sqrt{\frac{\sum(x-\mu)^2}{N}} = \sqrt{\frac{40}{5}} = \sqrt{8} = 2,8264$
+<center>
+
+
+## Número de muestras de tamaño n=2.
+
+Para determinar el número de muestras posibles, en un apoblación de tamaño N, hay dos formas:
+
++ **Muestreo con reemplazo.**
+
+Número de muestras diferentes $= N^{n}$
+
+
++ **Muestreo sin reemplazo.**
+
+Número de muestras diferentes $= \binom{N}{n} = \frac{N!}{n!(N-n)!}.$
+
+
+Para el ejemplo 
+
+Número de muestras diferentes $= \binom{5}{2} = \frac{5!}{2!(5-2)!} = 10.$
+
+
+## 
+| Muestra| Hijos | $\overline{X}$  | $\overline{X} -\mu_{\overline{X}}$|($\overline{X} -\mu_{\overline{X}})^{2}$|     
+|-------------------|-------------|---------------|--------------|-------------|
+|Pérez, Gómez     | 2,4  | $\frac{2+4}{2} = 3$      | 3-6 = -3|  $(3-6)^{2} = 9$  |
+| Pérez, Duran             | 2,6  | $\frac{2+6}{2} = 4$      | 4-6 = -2| $(4-6)^{2}= 4$    |
+|Pérez, Hidalgo            | 2,8  | $\frac{2+8}{2} = 5$      | 5-6 = -1 | $(5-6)^{2} = 1$    |
+| Pérez, Ramiréz           | 2,10 | $\frac{2+10}{2} = 6$     | 6-6 = 0|  $(6-6)^{2} = 0$    |
+| Gómez, Duran             | 4,6  | $\frac{4+6}{2} = 5$      | 5-6 = -1|   $(5-6)^{2} = 1$    |
+| Gómez, Hidalgo           | 4,8  | $\frac{4+8}{2} = 6$      | 6-6 = 0|     $(6-6)^{2} = 0$  |
+| Gómez, Ramiréz           | 4,10 | $\frac{4+10}{2} = 7$     | 7-6 = 1|   $(7 -6)^{2} =1$    |
+| Duran, Hidalgo           | 6,8  | $\frac{6+8}{2} = 7$      | 7-6 = 1|    $(7-6)^{2} = 1$   |
+| Duran, Ramiréz           | 6,10 | $\frac{6+10}{2} = 8$     | 8-6 = 2|    $(8 - 6)^{2} =4$   |
+|Hidalgo, Ramiréz          | 8,10 | $\frac{8+10}{2} = 9$     | 9-6 = 3|    $(9 - 6)^{2} = 9$   |
+
+##
+| Muestra| Hijos | $\overline{X}$  | $\overline{X} -\mu_{\overline{X}}$|($\overline{X} -\mu_{\overline{X}})^{2}$|     
+|-------------------|-------------|---------------|--------------|-------------|
+| Duran, Ramiréz           | 6,10 | $\frac{6+10}{2} = 8$     | 8-6 = 2|    $(8 - 6)^{2} =4$   |
+|Hidalgo, Ramiréz          | 8,10 | $\frac{8+10}{2} = 9$     | 9-6 = 3|    $(9 - 6)^{2} = 9$   |
+|Total| | 60 | 0 | 30|
+
+
+Donde la media de las medias ($\mu_{\overline{X}}$) es:
+
+
+<center>
+$\mu_{\overline{X}} = \frac{\sum \overline{X}}{N} = \frac{60}{10} = 6.$
+<center>
+
+Aquí N es el número total de muestras(se convierte en la población)
+
+## Con respecto a la media podemos concluir 
+
+Podemos concluir que la media de la distribución muestral de las medias es igual a la media de la población o dicho en otras plabras el valor esperado de la media es igual a la media de la población. Es decir: 
+
+<center>
+$\mu = E(X) = \mu_{\overline{X}} = \frac{\sum \overline{X}}{N}.$
+<center>
+
+## Con respecto la desviación estándar podemos concluir.
+
+La desviación estandar de todas las medias o sea la desviación estándar de la distribución muestral de las medias es:
+
+<center>
+$\sigma_{\overline{X}}= \sqrt{\frac{\sum (\overline{X} - \mu_{\overline{X}})^{2}}{N}} = \sqrt{\frac{30}{10}} = 1,732$
+<center>
+
+$\overline{X}$ esta indicando que hace referencia a la desviación estándar de la distribución muestral de la media.
+
+A este valor se le conoce como **error estándar de la media**  y tiene una relación con la desviación estándar de la población que se expresa mediante la siguiente ecuación:
+
+<center>
+$\sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}}\sqrt{\frac{N-n}{N-1}} = \frac{2.828}{\sqrt{2}}\sqrt{\frac{5-2}{5-1}} = 1.73$
+<center>
+
+Que es el mismo valor que se encontro calculando la desviación estándar de la distribución muestral de la media.
+
+## Distribución muestral de la media
+
+Distribución muestral de la media, agrupada según la frecuencia con que aparece cada valor.
+
+|Media de la muestra| Frecuencia Observada |
+|-------------------|----------------------|
+|3|1|
+|4|1|
+|5|2|
+|6|2|
+|7|2|
+|8|1|
+|9|1|
+|Total|10|
+
+## Gráfica de barras de la distribución muestral de la media.
+
+<center>
+![Distribución normal](media.jpg)
+</center>
+
+Las medias de la muestra tienden agruoparse alrededor de la media de la población lo cual es una carácteristica de la distribución normal; aunque en este ejemplo el tamaño de la muestra es  pequeño, aún así se nota que la distribución de las medias muestrales tiende a ser de forma normal.
+
+## 
+
+La afirmación anterior, junto con:
+
+<center>
+$\mu = E(X) = \mu_{\overline{X}} = \frac{\sum \overline{X}}{N}.$
+<center>
+
+y
+
+<center>
+$\sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}}\sqrt{\frac{N-n}{N-1}}$
+<center>
+
+
+Se conoce como teorema central del límite.
+
+## Teorema central del límite.
+
+
+si X es una variable aleatoria para la que se conoce su media $\mu$ y su varianza $\sigma^{2}$, la distribución muestral de la media tiende a ser normal con media $\mu$ y desviación estándar 
+
+<center>
+$\sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}}\sqrt{\frac{N-n}{N-1}}$
+<center>
+
+
+
+La expresión $\sqrt{\frac{N-n}{N-1}}$ es llamado factor de corrección.
+
++ si la población es infinita o muy numerosa, la fracción $\frac{N-n}{N-1}$ resulta ser prácticamente uno.
+
+## ¿Cuando se elimina este factor de correccción?
+
+En general se dice que resulta aceptable eliminar este factor de corrección cuando.
+
+<center>
+$\frac{n}{N} \leq 0.05$
+<center>
+
+## Distribución de probabilidad de la distribución muestral de la media.
+
+
+|Media de la muestra| Frecuencia Observada |Probabilidad de las medias muestrales|
+|-------------------|----------------------|----------------------|
+|3|1|0.10|
+|4|1|0.10|
+|5|2|0.20|
+|6|2|0.20|
+|7|2|0.20|
+|8|1|0.10|
+|9|1|0.10|
+|Total|10|1|
+
+
+##
+
+¿Cuál es la probabilidad de que la media de una muestra seleecionada fuese de 6?
+
+La probabilidad de que la media de dicha muestra sea de 6 es de 0,20.
+
+## Ejercicio 1.
+
+
+Se extrae una muestra de 30 elementos, de una población que se sabe que tiene un gran número de elementos y cuya media y desviación estándar son $\mu = 162$ y $\sigma = 20.$ Encuentre la probabilidad de que la media de esa muestra
+
++ Sea superior a 170.
+
++ Este entre  152 y 172.
+
+
+## Ejercicio 2.
+
+Quinientos cojinetes de bolas tienen un peso promedio de 5,02 onzas y una desviación típica de 0,30 onzas. Hallar la probabilidad de que en una muestra al azar de 100 cojinetes elejidos entre este grupo tenga un peso total:
+
++ Comprendido entre 496 y 500 onzas.
+
++ De más de 510 onzas.
+
+
+## Estandarización si $n \leq 30$ o no se conoce $\sigma$ es decir tenemos $s$ desviación estándar de la muestra.
+
+Si $n\leq 30$ o no se conoce $\sigma$, es decir tenemos $s$ desviación estándar de la muestra (la muestra puede ser mayor a 30 pero no se conoce la desviación estándar de la población). Se estándariza como:
+
++ **Población infinita**
+
+<center>
+$t = \frac{\overline{X} - \mu}{\frac{s}{\sqrt{n}}} = \frac{\overline{X} - \mu}{\frac{s}{\sqrt{n-1}}}$
+<center>
+
+es decir tiene una distribución t de student con n-1 grados de libertad.
+
+
+##
++ **Población finita**
+
+<center>
+$t = \frac{\overline{X} - \mu}{  \frac{s}{\sqrt{n}}\sqrt{\frac{N - n}{{N-1}}}   } = \frac{\overline{X} - \mu}{\frac{s}{\sqrt{n-1}}}$
+<center>
+
+es decir tiene una distribución t de student con n-1 grados de libertad.
+
+## Ejemplo 1
+
+El tiempo promedio  que gasta el bus urbano en Barranquilla es de 70 minutos. Se toma una muestra aleatoria de 12 recorridos y con dichos datos se ubtuvo una desviación estándar de 8 minutos.
+
++ ¿Cuál es la probabilidad de que la media muestral sea inferior a 76.26 minutos?
+
++ ¿Cuál es la probabilidad de que el promedio muestral sea superior a 64.24 minutos?
+
+
+##  Distribución muestral de la proporción.
+
+## Distribución muestral de la proporción.
+
+Es el conjunto de las propórciones de todas las muestras posibles de determinado tamaño n que es posible obtener de una determinada población de tamaño N.
+
+
+## Ejemplo
+
+
+Suponga que se tiene una población de N = 6 artículos, de los cuales 3 están defectuosos y 3 no. Si se utiliza 1 para representar la característica de estar defectuoso y 0 para representar la característica de no estarlo. Los datos se presentan en la siguiente tabla:
+
+##
+
+| Artículo           | Característica (x)     | 
+|-------------------|-------------|
+|a             | 1         |         
+| b             | 1           | 
+|c              | 1          | 
+| d           | 0           | 
+| e           | 0          | 
+|f| 0| 
+|Total|3 | |
+
+## Media poblacional.
+
+Por lo tanto:
+
++ la proporción poblacional es:
+
+<center>
+$P = \frac{\sum x}{N} = \frac{3}{6} = 0.5$
+<center>
+
+
+
+
+
+## Desviación estándar poblacional.
+
+| Familia           | Hijos       | $x-P$       | $(x-P)^{2}$ |
+|-------------------|-------------|---------------|--------------|
+|a             | 1          | (1-0,5)=0,5      | 0,25|
+| b             | 1           | (1-0,5)=0,5       |  0,25|
+|c              | 1           | (1-0,5)=0,5       |  0,25 |
+| d           | 0         | (0-0,5)=-0,5        |  0,25|
+| e           | 0          | (0-0,5)=-0,5      |  0,25|
+|f|0|(0-0,5)=-0,5| 0,25|
+|Total|3|0|1,5|
+
+
+
+##  la desviación estandar es:
+
++ la desviación estandar es:
+
+<center>
+$\sigma = \sqrt{\frac{\sum(x-P)^2}{N}} = \sqrt{\frac{1.5}{6}} = \sqrt{0.25} = 0,5$
+<center>
+
+La cual puede calcularse como:
+
+<center>
+$\sigma = \sqrt{pq} = \sqrt{0.5*0.5} = \sqrt{0.25} = 0,5$
+<center>
+
+
+## Número de muestras de tamaño n=2.
+
+Para determinar el número de muestras posibles, en un apoblación de tamaño N, hay dos formas:
+
++ **Muestreo con reemplazo.**
+
+Número de muestras diferentes $= N^{n}$
+
+
++ **Muestreo sin reemplazo.**
+
+Número de muestras diferentes $= \binom{N}{n} = \frac{N!}{n!(N-n)!}.$
+
+
+Para el ejemplo 
+
+Número de muestras diferentes $= \binom{6}{2} = \frac{6!}{2!(6-2)! = 15}.$
+
+
+## Posibles muestras
+
+| Muestra| Característica (X) | Proporción $\overline{P}$  | 
+|-------------------|-------------|---------------|
+|a,b    | 1,1  | $\frac{2}{2} = 1$|
+| a,c   | 1,1  | $\frac{2}{2} = 1$ | 
+|a,d            | 1,0  | $\frac{1}{2} = 0,5$      | 
+| a,e           |1,0 | $\frac{1}{2} = 0,5$      | 
+| a,f             |1,0 | $\frac{1}{2} = 0,5$      | 
+|b,c           | 1,1  | $\frac{2}{2} = 1$       | 
+|b,d           | 1,0  | $\frac{1}{2} = 0,5$       |
+
+##
+| Muestra| Característica (X) | Proporción $\overline{P}$  | 
+|-------------------|-------------|---------------|
+|b,e           | 1,0  | $\frac{1}{2} = 0,5$       |
+|b,f           | 1,0  | $\frac{1}{2} = 0,5$       |
+|c,d           | 1,0  | $\frac{1}{2} = 0,5$       |
+|c,e           | 1,0  | $\frac{1}{2} = 0,5$       |
+|c,f           | 1,0  | $\frac{1}{2} = 0,5$       |
+|d,e           | 0,0  | $\frac{0}{2} = 0$       |
+|d,f           | 0,0  | $\frac{0}{2} = 0$       |
+|e,f           | 0,0  | $\frac{0}{2} = 0$       |
+|Total          |   | 7,5$\frac{0}{2} = 0$       |
+
+##
+| Muestra| Característica (X) | Proporción $\overline{P}$  | 
+|-------------------|-------------|---------------|
+|Total          |   | 7,5       |
+
+
+
+## Con respecto a la proporción podemos concluir 
+
+Podemos concluir que la proporción de la distribución muestral de las proporción es igual a la proporción de la población o dicho en otras palabras el valor esperado de la proporción es igual a la proporción de la población. Es decir: 
+
+<center>
+$\mu_{\overline{P}} = \frac{\sum \overline{P}}{N} = \frac{7.5}{15} = 0.5$
+</center>
+
+es decir
+
+
+<center>
+$\mu_{\overline{P}} = E(P) = P_{\overline{P}} = P$
+</center>
+
+## Para calcular la desviación estándar.
+
+
+ 
+| Proporciones muestrales| Frecuencias | $\overline{P}-P_{\overline{P}}$  |$( \overline{P}-P_{\overline{P}})^{2}$|$f_{i}( \overline{P}-P_{\overline{P}})^{2}$|     
+|-------------------|-------------|---------------|--------------|-------------|
+| 0        | 3 | 0-0,5=-0,5     | 0,25|    0,75  |
+| 0,5        | 9 | 0,5-0,5=0     | 0|    0 |
+| 1       | 3 | 1-0,5=0,5     | 0,25|    0,75  |
+|Total|15 | 0 |  | 1,5|
+
+
+Luego la desviación estandar de todas las proporciones o sea la desviación estándar de la distribución muestral de las proporción es:
+
+
+<center>
+$\sigma_{\overline{P}} = \sqrt{\frac{\sum (\overline{P}- P_{\overline{P}})^{2}}{N}} = \sqrt{\frac{1.5}{15}} = 0.3162.$
+<center>
+
+Aquí N es el número total de muestras(se convierte en la población)
+
+
+$\overline{P}$ esta indicando que hace referencia a la desviación estándar de la distribución muestral de la proporción.
+
+
+
+## Con respecto la desviación estándar podemos concluir.
+
+
+A este valor se le conoce como **error estándar de la proporción**  y tiene una relación con la desviación estándar de la población (P) que se expresa mediante la siguiente ecuación:
+
+<center>
+$\sigma_{\overline{P}} = \sqrt{\frac{pq}{{n}}}\sqrt{\frac{N-n}{N-1}}$
+</center>
+
+Veamos que se cumple
+
+<center>
+$\sigma_{\overline{P}} = \sqrt{\frac{pq}{{n}}}\sqrt{\frac{N-n}{N-1}} = \sqrt{\frac{0.5*0.5}{{2}}}\sqrt{\frac{6-2}{6-1}} = 0,3162$
+</center>
+
+Que es el mismo valor que se encontro calculando la desviación estándar de la distribución muestral de la proporción.
+
+
+
+## Tres conclusiones importantes sobre la distribución muestral de la proporción.
+
++ $E(P) = P_{\overline{P}} = P.$
+
++ $\sigma_{\overline{P}} = \sqrt{\frac{pq}{{n}}}\sqrt{\frac{N-n}{N-1}}$
+
++ **Teorema Central del límite**. Si X es una variable aleatoria para la que se conoce su proporción $P$ y su varianza $\sigma^{2}$ la distribución muestral de la proporción tiende a ser normal con media $\mu_{\overline{P}}=P_{\overline{P}}$ y desviación estándar 
+<center>
+$\sigma_{\overline{P}} = \sqrt{\frac{pq}{{n}}}\sqrt{\frac{N-n}{N-1}} = \sqrt{\frac{0.5*0.5}{{2}}}\sqrt{\frac{6-2}{6-1}} = 0,3162$
+</center>
+
+## Es decir
+
+
+Es decir 
+
+<center>
+$z = \sqrt{\frac{pq}{{n}}}\sqrt{\frac{N-n}{N-1}}$
+</center>
+
+
+## Ejemplo 1.
+
+Una cadena de tiendas de departamentos tiene 5000 cuentas de crédito abiertas con sus clientes. Se sabe, de acuerdo con la experiencia de varios años que la proporción de cuentas de crédito que se encuentran atrasadas en sus pagos(morosos) es de 10%, si se extrae de esta población una muestra aleatoria de 100 cuentas,
+
++  ¿Cuál es la probabilidad de que más de trece de ellas sean morosas?
+
+
+
+## Distribución muestral de la diferencia de medias
+
+## Distribución muestral de la diferencia de medias.
+
+Es el conjunto de las diferencias de las medias de todas las muestras posibles de determinado tamaño n y m respectivamente,  que es posible obtener de una determinada población.
+
+
+## Distribución de las diferencias de medias.
+
+
+Dichas diferencias se ditribuyen de acuerdo a los supuestos que cumplen y se encuentran resumidas en la siguientes tablas:
+
+##
+
+| Supuestos          | Estandarizada    | 
+|-------------------|-------------|
+| Si $n_{1}> 30$ y $n_{2}> 30$ y  $\sigma_{1}$ y $\sigma_{2}$ conocidos.  | $z=\frac{(\overline{X_{1}}-\overline{X_{2}})-(\mu_{1} -\mu_{2}) }{\sqrt{\frac{\sigma_{1}^{2}}{n_{1}}+ \frac{\sigma_{2}^{2}}{n_{2}}}}$   | 
+|-------------------|-------------|
+| Si $n_{1}> 30$ y $n_{2}>30$ y  $\sigma_{1}$ y $\sigma_{2}$ desconocidos. Se aproxima $\sigma_{1}\approx s_{1}$ y $\sigma_{2}\approx s_{2}$ | $z=\frac{(\overline{X_{1}}-\overline{X_{2}})-(\mu_{1} -\mu_{2}) }{\sqrt{\frac{s_{1}^{2}}{n_{1}}+ \frac{s_{2}^{2}}{n_{2}}}}.$              |
+ 
+
+ 
+
+
+
+
+
+
+##
+
+| Supuestos          | Estandarizada    | 
+|-------------------|-------------|
+| Si $n_{1}\leq 30$ y $n_{2}\leq 30$ y  $\sigma_{1}$ y $\sigma_{2}$ desconocidos. Además se supone $\sigma_{1}=\sigma_{2}.$ **(HOMOCEDASTICAS)**. Se aproxima $\sigma_{1}\approx s_{1}$ y $\sigma_{2}\approx s_{2}$           |  $t=\frac{(\overline{X_{1}}-\overline{X_{2}})-(\mu_{1} -\mu_{2}) }{S_{p}\sqrt{\frac{1}{n_{1}}+ \frac{1}{n_{2}}}}.$      Con $GL=n_{1} +n_{2} - 2$  y $S_{p}^{2}= \frac{(n_{1}-1)s_{1}^{2} + (n_{2}-1)s_{2}^{2}}{n_{1} + n_{2} -2}$ 
+| 
+|Si $n_{1}\leq 30$ y $n_{2}\leq 30$ y  $\sigma_{1}$ y $\sigma_{2}$ desconocidos. Además se supone $\sigma_{1}\not =\sigma_{2}.$ **(HETEROCEDASTICAS)**. Se aproxima $\sigma_{1}\approx s_{1}$ y $\sigma_{2}\approx s_{2}$              | $t=\frac{(\overline{X_{1}}-\overline{X_{2}})-(\mu_{1} -\mu_{2}) }{\sqrt{\frac{s_{1}^{2}}{n_{1}}+ \frac{s_{2}^{2}}{n_{2}}}}$. Con GL grados de libertad y $GL=\frac{\left(\frac{s_{1}^{2}}{n_{1}} + \frac{s_{2}^{2}}{n_{2}} )\right)^{2}}{\frac{(s_{1}^{2}/n_{1})^{2}}{n_{1}-1}+\frac{(s_{2}^{2}/n_{2})^{2}}{n_{2}-1}}$ | 
+
+##
+
+| Supuestos          | Estandarizada    | 
+|-------------------|-------------|
+|Para muestras pareadas o relacionadas| $t=\frac{\overline{d} - (\mu_{1} -\mu_{2})}{\frac{s_{d}}{\sqrt{n}}}.$ Con $n-1$ grados de libertad. $\overline{d}$ es el promedio de las diferencias y $s_{d}$ la desviación estándar de las diferencias |
+
+
+## Ejercicio 1.
+
+En la ciudad de Tunja para niños de cuarto grado se tiene un peso medio de 35 kg convarianza de 5 kg, mientras que en la ciudad de Cartagena para niños de cuarto grado se tiene un peso medio de 45 kg con una varianza de 8 kg. Se toma una muestra aleatoria en Bogota de 50 niños de cuarto grado y una muestra aleatoria en Cartagena de 60 niños de cuarto grado.
+
++ ¿Cuál es la probabilidad de que la media muestral del peso de los niños de Cartagena difiera de la media muestral del peso de los niños de Tunja de cuarto grado en más de 10.5 kg?.
+
++ ¿Cuál es la probabilidad de que la diferencia absoluta de las medias muestrales sea de por lo menos 10.2 kg?
+
+## Ejercicio 2.
+
+Los resultados en el control de calidad de dos productos son los siguientes:
+
+*Producto 1:* 1.6, 2.6, 3.6 y 2.6.
+
+*Producto 2:* 2.6, 3.1, 3.1, 4.1, 3.6 y 2.1.
+
++ ¿Cuál es la probabilidad de que la media muestral 1 difiera de la media muestral 2 como máximo en -0.7?
+
++ ¿Cuál es la probabilidad de que la media muestral 1, difiera de la media muestral 2 en más de 0.88?
+
+## Ejercicio 3.
+
+Experimentos de memoria Un grupo de psicología realizó un experimento para comparar si una calificación de recordatorio, en la que se dieron instrucciones para formar imágenes de 25 palabras,
+es mejor que una calificación inicial de recordatorio para la cual no se dieron instrucciones para formar imágenes. Veinte estudiantes participaron en el experimento con los resultados siguientes:
+
+<center>
+
+![](imag.jpg)
+</center>
+
+
+## 
+
++ ¿Cuál es la probabilidad de que la media muestral 1 difiera de la media muestral 2 como máximo en 2 puntos?
+
+## Distribución muestral de las diferencias de proporciones.
+
+##  Distribución muestral de las diferencias de proporciones.
+
+Es el conjunto de las diferencias de las proporciones de todas las muestras posibles de determinado tamaño n y m respectivamente, que es posible obtener de una determinada población.
+
+
+## Distribución de las diferencias de medias.
+
+Dichas diferencias se ditribuyen de acuerdo a los supuestos que cumplen y se distribuyen de acuerdo a una distribución normal. Donde se estandariza de la siguiente forma
+
+<center>
+$z = \frac{(\hat{p}_{1} - \hat{p}_{2}) - (p_{1} - p_{2})}{\sqrt{\frac{\hat{p}_{1}\hat{q}_{1}}{n_{1}} + \frac{\hat{p}_{2}\hat{q}_{2}}{n_{2}} }}$
+</center>
+
+## Ejemplo
+
+Los hombres y mujeres adultos radicados en una ciudad grande del norte difieren en sus opiniones sobre la promulgación de la pena de muerte para personas culpables de asesinato. Se cree que el 12% de los hombres adultos están a favor de la pena de muerte, mientras que sólo 10% de las mujeres adultas lo están. Si se pregunta a dos muestras aleatorias de 100 hombres y 100 mujeres su opinión sobre la promulgación de la pena de muerte, determine la probabilidad de que el porcentaje de hombres a favor sea al menos 3% mayor que el de las mujeres.
+
+## Ejemplo
+
+Un candidato a la presidencia de la republica tiene el 60% de la intención de voto en Boyacá y el 58% de la intención de voto en Casanare se toma una muestra aleatoria de 400 votantes en Boyacá y de 500 en Casanare.
+
++ ¿Cuál es la probabilidad de que la diferencia entre las proporciones muestrales de votantes en Boyacá y Casanare no supere el 3%?.
+
++ ¿Cuál es la probabilidad de que la diferencia absoluta sea a lo más el 2%?
+
+
+##  Distribución muestral del cociente de varianzas.
+
+Es el conjunto de los cocientes  de las varianzas de todas las muestras posibles de determinado tamaño n y m respectivamente, que es posible obtener de una determinada población.
+
+
+## Distribución muestral del cociente de varianzas.
+
+Dichas diferencias se ditribuyen de acuerdo a una distribución de Fisher
+
+<center>
+$F= \frac{\frac{s_{1}^{2}}{\sigma_{1}^{2}}}{\frac{s_{2}^{2}}{\sigma_{2}^{2}}}$
+
+$s_{1}^{2} < s_{2}^{2}$
+
+</center>
+
+
+con $n_{1}- 1$ grados de libertad en el numerador y $n_{2}- 1$ grados de libertad en el denominador.
+
+## Ejemplo 1.
+
+La variación en el número de unidades diarias de cierto producto, el cual manejan dos operadores A y B, debe ser la misma. Con base en muestras de tamaño $n_{A} = 16$ días y $n_{B}= 21$ días, el valor calculado de las desviaciónes estándar muestrales es de $s_{A} = 8.2$ unidades y $s_{B}= 5.8$ unidades. Si el número de éstas, manejada por los dos operadores, por día, son dos variables aleatorias independientes que se encuentran aproximadas, en forma adecuada, por distribuciones normales, ¿existe alguna razón para creer que las varianzas son iguales?
+
+
+## Distribución muestral de $S^{2}$
+
+## Distribución muestral de $S^{2}$
+
+Es el conjunto   de las varianzas de todas las muestras posibles de determinado tamaño n, que es posible obtener de una determinada población.
+
+
+## Distribución muestral de la  varianza.
+
+La distribución muestral de la varianza se distribuyen mediante una chi-cuadrado, con $n$ grados de libertad, es decir:
+
+<center>
+$\chi^{2}= \frac{n s^{2}}{\sigma^{2}}$
+
+</center>
+
+## Ejemplo
+
+Consideresé una medición física proporcionada por un instrumento de precisión, en donde el interés recae en la variabilidad de la lectura. Supóngase que con la experiencia, la medición es una variable aleatoria normalmente distribuida con media 10y desviación estándar igual a 0,1 unidades. Si se toma una muestra aleatoria procedente del proceso de manufactura de los instrumentos de tamaño 25, ¿cuál es la probabilidad de que el valor de la varianza muestral sea mayor de 0,014 unidades cuadradas?
